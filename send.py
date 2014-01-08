@@ -1,10 +1,9 @@
 #!/usr/bin/python
 
-
 import pika
 
 #establishes connection with RabbitMQ server to a broker on the local machine
-connection = pika.BlockingConnection(pika.ConnectionParameters('localhost'))
+connection = pika.BlockingConnection(pika.ConnectionParameters(host='localhost'))
 channel = connection.channel()
 
 #creates queue to where the message will be delivered, queue is called 'hello'
